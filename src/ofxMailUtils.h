@@ -8,13 +8,7 @@
 #define _POCO_MAIL_TOOLS
 
 #include "ofMain.h"
-
-#include "ofxThread.h"
-
-
-
-
-
+#include "ofThread.h"
 
 #include "Poco/Net/MailMessage.h"
 #include "Poco/Net/POP3ClientSession.h"
@@ -113,7 +107,7 @@ struct ofxMailAccount{
 	vector<int> alreadyReaded;
 };
 
-class ofxPop3ClientUtils : public ofxThread{
+class ofxPop3ClientUtils : public ofThread{
 
 	public:
 
@@ -152,7 +146,7 @@ class ofxPop3ClientUtils : public ofxThread{
 };
 
 
-class ofxSmtpClientUtils:public ofxThread{
+class ofxSmtpClientUtils:public ofThread{
 public:
 
 	ofxSmtpClientUtils();
